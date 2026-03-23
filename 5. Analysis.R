@@ -276,12 +276,30 @@ mod3_att <- extract_coefs(df_list, "z_attention", "Attention subdomain score", "
 mod123_cog <-rbind(mod1_cog, mod2_cog, mod3_cog)
 mod123_cog$model <- rep(c("Baseline Model", "Partially SES-Adjusted Model", "Fully SES-Adjusted Model"), 
                                       times = c(nrow(mod1_cog), nrow(mod2_cog), nrow(mod3_cog)))
+mod123_cog$model <- factor(
+  mod123_cog$model,
+  levels = c("Baseline Model",
+             "Partially SES-Adjusted Model",
+             "Fully SES-Adjusted Model")
+)
 mod123_mem <-rbind(mod1_mem, mod2_mem, mod3_mem)
 mod123_mem$model <- rep(c("Baseline Model", "Partially SES-Adjusted Model", "Fully SES-Adjusted Model"), 
                           times = c(nrow(mod1_mem), nrow(mod2_mem), nrow(mod3_mem)))
+mod123_mem$model <- factor(
+  mod123_mem$model,
+  levels = c("Baseline Model",
+             "Partially SES-Adjusted Model",
+             "Fully SES-Adjusted Model")
+)
 mod123_att<-rbind(mod1_att, mod2_att, mod3_att)
 mod123_att$model <- rep(c("Baseline Model", "Partially SES-Adjusted Model", "Fully SES-Adjusted Model"), 
                           times = c(nrow(mod1_att), nrow(mod2_att), nrow(mod3_att)))
+mod123_att$model <- factor(
+  mod123_att$model,
+  levels = c("Baseline Model",
+             "Partially SES-Adjusted Model",
+             "Fully SES-Adjusted Model")
+)
 
 
 # Output forest plot (Fig 1):
@@ -375,6 +393,12 @@ mod3_cog <- extract_coefs(df_list, "z_global", "Global cognition score", "presch
 mod123_cog <-rbind(mod1_cog, mod2_cog, mod3_cog)
 mod123_cog$model <- rep(c("Baseline Model", "Partially SES-Adjusted Model", "Fully SES-Adjusted Model"),
                          times = c(nrow(mod1_cog), nrow(mod2_cog), nrow(mod3_cog)))
+mod123_cog$model <- factor(
+  mod123_cog$model,
+  levels = c("Baseline Model",
+             "Partially SES-Adjusted Model",
+             "Fully SES-Adjusted Model")
+)
 
 # Output forest plots:
 fp_mod123_cog <- forestplot(mod123_cog, "presch_headstart", "Global cognition score")
@@ -996,6 +1020,13 @@ mod3_cog_cc <- extract_coefs_completecase(df_cc_excludedObs, "z_global", "Global
 mod123_cog_cc <-rbind(mod1_cog_cc, mod2_cog_cc, mod3_cog_cc)
 mod123_cog_cc$model <- rep(c("Baseline Model", "Partially SES-Adjusted Model", "Fully SES-Adjusted Model"),
                          times = c(nrow(mod1_cog_cc), nrow(mod2_cog_cc), nrow(mod3_cog_cc)))
+mod123_cog_cc$model <- factor(
+  mod123_cog_cc$model,
+  levels = c("Baseline Model",
+             "Partially SES-Adjusted Model",
+             "Fully SES-Adjusted Model")
+)
+
 
 # Output forest plots:
 fp_mod123_cog_cc <- forestplot(mod123_cog_cc, "presch_headstart", "Global cognition score")

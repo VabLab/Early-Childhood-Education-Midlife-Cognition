@@ -3,6 +3,8 @@
 #### Authors
 Whitney Wells, Jillian Hebert, Chloe W. Eng, Catherine dP Duarte, Anusha M. Vable
 
+Corresponding author: Whitney Wells, whitney.wells@ucsf.edu.
+
 [Link to paper](https://doi.org/10.1371/journal.pone.0343880)
 
 # Abstract
